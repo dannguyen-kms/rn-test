@@ -1,6 +1,4 @@
-/**
- * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
- */
+
 import React, { useCallback } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";

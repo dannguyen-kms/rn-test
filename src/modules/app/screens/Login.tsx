@@ -1,19 +1,12 @@
-/**
- * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
- */
+
 import React, { useCallback } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
-import { useDispatch } from "react-redux";
 import { showToast } from "@helpers/toast/showToast";
-import { SetUser } from "@modules/app/redux/appSlice";
 
 export default function Login() {
-  const dispatch = useDispatch();
 
   const goHomePage = useCallback(() => {
     showToast("Welcome");
-
-    dispatch(SetUser({ name: "Ali Burhan Keskin" }));
   }, []);
 
   return (

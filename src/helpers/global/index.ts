@@ -1,6 +1,4 @@
-/**
- * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
-*/
+
 
 /**
  * Checks if a given string is a valid JSON.

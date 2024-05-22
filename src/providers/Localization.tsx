@@ -1,8 +1,5 @@
-/**
- * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
- */
-import moment from "moment";
-import "moment/min/locales";
+
+import dayjs from "dayjs";
 import * as Localization from "expo-localization";
 import { I18n } from "i18n-js";
 import { TrResource, EnResource } from "@src/localization/index";
@@ -44,7 +41,7 @@ const i18n = new I18n(
 
 export default i18n;
 
-moment.locale(deviceLanguage);
+dayjs.locale(deviceLanguage);
 
 // moment(1316116057189).fromNow(); // il y a 7 ans
 

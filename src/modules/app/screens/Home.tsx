@@ -1,6 +1,3 @@
-/**
- * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
- */
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, View, StyleSheet, Button } from "react-native";

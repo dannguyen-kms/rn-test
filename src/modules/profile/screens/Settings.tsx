@@ -1,6 +1,3 @@
-/**
- * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
- */
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 

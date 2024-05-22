@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppSelector } from "@src/store";
 import { DarkTheme, LightTheme } from "@styles/theme";
 import type { ITheme } from "@styles/theme";
 
@@ -17,8 +16,9 @@ type Props = {
  * @returns {JSX.Element} The JSX element representing the theme provider.
  */
 function ThemeProvider({ children }: Props) {
-  const userColorScheme = useAppSelector((s) => s?.AppReducer?.userColorScheme);
-  const selectedTheme = userColorScheme === "dark" ? DarkTheme : LightTheme;
+  const userColorScheme = "light";
+  // const selectedTheme = userColorScheme === "dark" ? DarkTheme : LightTheme;
+  const selectedTheme = LightTheme;
   return (
     <ThemeContext.Provider value={selectedTheme}>
       {children}

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { useAppSelector } from "@src/store";
+// import { useAppSelector } from "@src/store";
 import translate from "@helpers/localization";
 import { enableScreens } from "react-native-screens";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -17,31 +17,15 @@ enableScreens();
 const Stack = createStackNavigator<RootStackParams>();
 
 function RootNavigation() {
-  const isSignedIn = useAppSelector((s) => s.AppReducer?.isSignedIn);
-  const userColorScheme = useAppSelector((s) => s?.AppReducer?.userColorScheme);
   const theme = useTheme();
-  const isDarkTheme = userColorScheme === "dark";
-
-  const navigationTheme = {
-    dark: isDarkTheme,
-    colors: {
-      primary: theme.primary,
-      background: theme.background,
-      card: theme.card,
-      text: theme.text,
-      border: theme.border,
-      notification: theme.notification,
-    },
-  };
 
   return (
     <SafeAreaProvider>
-      <NavigationContainer ref={navigationRef} theme={navigationTheme}>
+      <NavigationContainer ref={navigationRef}>
         <Stack.Navigator
-          initialRouteName={isSignedIn ? Routes.Home : Routes.Login}
+          initialRouteName={Routes.Home}
           screenOptions={{ ...ScreenOptions, headerTintColor: theme.primary }}
         >
-          {isSignedIn ? (
             <>
               <Stack.Screen
                 name={Routes.Home}
@@ -53,7 +37,6 @@ function RootNavigation() {
                 }}
               />
             </>
-          ) : (
             <>
               <Stack.Screen
                 name={Routes.Login}
@@ -61,7 +44,6 @@ function RootNavigation() {
                 options={{ headerShown: false }}
               />
             </>
-          )}
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

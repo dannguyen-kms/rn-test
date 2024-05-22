@@ -1,7 +1,4 @@
-import Store from '@store/index';
-import { removeStoreDataAsync } from '@src/helpers/storage';
-import { StoreEnum } from "@helpers/storage/storeEnum";
-import { LoggedOut } from '../redux/appSlice';
+
 import { ILoginDTO } from '../types/ILoginDTO';
 
 /**
@@ -17,9 +14,8 @@ export async function signIn(loginDto: ILoginDTO) {
  * @returns {Promise<void>} A promise that resolves once the user data is cleared.
  */
 export async function clearUser() {
-  await removeStoreDataAsync(StoreEnum.Token);
 
-  Store.dispatch(LoggedOut());
+  // Store.dispatch(LoggedOut());
 }
 
 /**
